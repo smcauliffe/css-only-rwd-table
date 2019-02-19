@@ -1,7 +1,157 @@
-$bg-color: #333;
-$color: #fff;
+$standard-hero-min-height: 500px;
+$standard-hero-background-color: #0a9f74;
+$standard-hero-padding: 15px;
 
-body {
-    background: $bg-color;
-    color:$color;
+$small: 768px;
+$medium: 1024px;
+
+.gd-static-content-2 {
+    background: #333;
+    padding-top: 30px;
+    
+
+    .gd-static-content-header {
+        padding: 30px;
+        font-size: 30px;
+        color: white;
+    }
+    @media (max-width: ($small - 1)) {
+        .gd-static-content-header {
+            padding: 15px;
+            font-size: 18px;
+        }
+    }
+    .table {
+        border: none;
+        font-size: 13px;
+        margin-bottom: 80px;
+        thead {
+            font-size: 11px;
+            tr {
+                height: 80px;
+                background: #eee;
+            }
+            th {
+                border: none;
+                &:first-child {
+                    text-transform: uppercase;
+                    padding-left: 30px;
+                    vertical-align: middle;
+                }
+                &:not(:first-child) {
+                    text-align: center;
+                }
+            }
+        }
+        tbody {
+            tr {
+                background: white;
+            }
+            th {
+                font-weight: normal;
+                padding-left: 30px;
+            }
+            td {
+                height: 50px;
+                text-align: center;
+                border: none;
+                span {
+                    line-height: 1;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    opacity: .25;
+                    
+                    &.bullet {
+                        font-size: 2em;
+                        color: #0b0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: ($medium - 1) ) {
+        .grid-container {
+            padding: 0;
+            .column {
+                padding: 0;
+            }
+            .gd-table-container {
+                overflow: hidden;
+                margin-bottom: 30px;
+                .gd-table-body-container {
+                    overflow: auto;
+                }
+                .table {
+                    position: relative;
+                    display: block;
+                    margin: 0;
+                    th,td {
+                        display: block;
+                        text-align: center;
+                        padding: 0;
+                        position: relative;
+                        span {
+                            display: table-cell;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    thead {
+                        border-right: 1px solid #ccc;
+                        z-index: 1;
+                        box-shadow: 3px 0 5px rgba(0,0,0,.25);
+                        font-size: 13px;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        background: #fff;
+                        th {
+                            width: 50vw;
+                            min-height: 80px;
+                            background: #fff;
+                            border-bottom: 1px solid #ccc;
+                            &:first-child {
+                                min-height: 80px;
+                                background: #eee;
+                                vertical-align: inherit;
+                            }
+                        }
+                    }
+                    tbody {
+                        display: flex;
+                        flex-direction: row;
+                        position: relative;
+                        top: 0;
+                        left: 50vw;
+                        overflow: auto;
+                        th,
+                        td {
+                            vertical-align: middle;
+                            min-height: 80px;
+                            width: 50vw;
+                            white-space: normal;
+                            border-bottom: 1px solid #ccc;
+                        }
+                        th {
+                            font-size: 11px;
+                            min-height: 80px;
+                            background: #eee;
+                        }
+                    }
+                    tr {
+                        display: flex;
+                        flex-direction: column;
+                        float: left;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
 }
